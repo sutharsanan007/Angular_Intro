@@ -1,0 +1,102 @@
+<!--Fetched Array using *ngFor Directive-->
+
+<ul>
+    <li *ngFor="let post of postArray">
+        {{ post }}
+</ul>
+
+<!--Fetching Object Array-->
+<!--ngIf and ng-template-->
+
+<button (click) = "addNew()">Add New Data</button>
+
+<div *ngIf = "objArray.length > 0; then postList else noData"></div>
+
+<ng-template #postList>
+    <ul>
+        <li *ngFor="let post of objArray; let i = index">
+            {{ post.postTitle }}
+            <button (click) = "onDelete(i)">Delete</button>
+        </li>
+    </ul>
+</ng-template>
+
+<ng-template #noData>
+    <p>No Data Available</p>
+</ng-template>
+
+<!--ngSwitch Cases-->
+
+<div>
+    <button (click) = "onClick('step 1')">Step 1</button>
+    <button (click) = "onClick('step 2')">Step 2</button>
+    <button (click) = "onClick('step 3')">Step 3</button>
+</div>
+
+<div [ngSwitch] = "stepForm">
+    <p *ngSwitchCase = "'step 1'">Step 1 Form</p>
+    <p *ngSwitchCase = "'step 2'">Step 2 Form</p>
+    <p *ngSwitchCase = "'step 3'">Step 3 Form</p>
+    <p *ngSwitchDefault>No buttons clicked</p>
+</div>
+
+<!--ngStyle Directive-->
+<h1
+[ngStyle]="{
+    color: isActive ? 'red' : 'black',
+    textTransform: isActive ? 'uppercase' : 'lowercase'
+}">
+NgStyle Directive
+</h1>
+
+<!--ngClass Directive-->
+<h1 [ngClass]="{
+    'main': isActive,
+    'text-weight': isActive
+}">
+ngClass Directive
+</h1>
+
+<!--TASK-->
+<div class="form-area">
+    <h1>User Details</h1>
+    <br><br>
+    <input type="text" [(ngModel)] = "name" placeholder="Name"/>
+    <br><br>
+    <input type="text" [(ngModel)] = "email" placeholder="Email"/>
+    <br><br>
+    <textarea cols="30" rows="10" [(ngModel)] = "address" placeholder="Address"></textarea>
+    <br><br>
+    <button (click) = "onSubmit()"></button>
+</div>
+
+<div *ngIf="users.length > 0; else noUser">
+    <div class="table-area">
+        <table width="500">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Address</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users; let i = index">
+                    <td>{{ i + 1 }}</td>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>
+                      <button (click) = "onDeleteUser(i)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<ng-template #noUser>
+    <h4>No User Available</h4>
+</ng-template>

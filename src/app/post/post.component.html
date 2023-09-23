@@ -1,0 +1,16 @@
+<p>{{ title }}</p>
+
+<h3>{{ fromParent }}</h3>
+
+<app-post-list [fromPostParent]="postParentMessage"></app-post-list>
+
+<button (click)='sendMessage()'>Click</button>
+
+<!--Angular service-->
+
+<button (click)='addNewData()'>Add New</button>
+<ul>
+    <li *ngfor="let post of posts">
+        {{ post.postTitle }}
+    </li>
+</ul>

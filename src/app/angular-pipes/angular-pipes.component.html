@@ -1,0 +1,31 @@
+<p>angular-pipes works!</p>
+
+<!--Uppercase / Lowercase-->
+<h1>{{ title | uppercase }}</h1>
+
+<!--Number pipe-->
+<h1>{{ count | number }}</h1>
+
+<!--decimal pipe '{First how many integer part}.{min decimal point-max decimal point}'-->
+<h1>{{ dcValue | number: '1.2-2' }}</h1>
+
+<!--currency pipe give True for currency symbol while False for currency code-->
+<h1>{{ price | currency: "USD: true" }}</h1>
+
+<!--Date pipe-->
+<h1>{{ today | date: 'shortDate' }}</h1>
+
+<!--Json pipe-->
+<p>{{ postObj | json }}</p>
+
+<!--Percent pipe-->
+<h1>{{ percent | percent }}</h1>
+
+<!--Slice pipe-->
+<h1>{{ postArray | slice: 0:3 }}</h1>
+
+<!--Custom pipe-->
+<h3>{{ userdetails.city | append}}</h3>
+
+<!--Cutom pipe with arguements-->
+<p>{{ summary | summary: 10 }}</p>
