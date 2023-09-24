@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { OutletContext } from '@angular/router';
 import { PostService } from '../services/post.service'
+import { Post } from '../models/post'
 
 @Component({
   selector: 'app-post',
@@ -33,7 +34,8 @@ export class PostComponent implements OnInit {
   }
 
   addNewData(){
-    let newPost = {
+
+    let newPost: Post = {
       id: 7,
       postTitle: "Post 7",
     }

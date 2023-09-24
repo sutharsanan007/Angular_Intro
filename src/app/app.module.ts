@@ -12,6 +12,7 @@ import { AngularPipesComponent } from './angular-pipes/angular-pipes.component';
 import { AppendPipe } from './angular-pipes/append.pipe';
 import { SummaryPipe } from './angular-pipes/summary.pipe';
 import { PostService } from './services/post.service';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { PostService } from './services/post.service';
     AngularDirectivesComponent,
     AngularPipesComponent,
     AppendPipe,
-    SummaryPipe
+    SummaryPipe,
+    FormComponent
   ],
   imports: [
     BrowserModule,
