@@ -1,23 +1,26 @@
 <p>form works!</p>
 
-<div class="form-area">
-    <form>
-
-        <div class="form-group">
-            <label>First Name</label>
-            <input type="text" placeholder="Full name" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Email</label>
-            <input type="email" placeholder="Email" class="form-control">
-        </div>
-
-        <div class="form-group">
-            <label>Address</label>
-            <textarea cols="30" rows="10" placeholder="Address" class="form-control"></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+<div class="container mt-5">
+    <div class="form-area">
+        <form #f = 'ngForm' (submit) = "onSubmit(f)"> 
+        <!--In order to make a form as a template driven form, we need to add ngForm directive to the form template variable.-->
+    
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" placeholder="Full name" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="Email" class="form-control">
+            </div>
+    
+            <div class="form-group">
+                <label>Address</label>
+                <textarea cols="30" rows="10" placeholder="Address" class="form-control"></textarea>
+            </div>
+    
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 </div>
